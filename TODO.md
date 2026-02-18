@@ -1,5 +1,6 @@
-- [ ] avoid all doors
-- [ ] increase happiness when playing
-- [ ] increase all health
-- [ ] increase regeneration rate
-- [ ] set spawn point via item
+- [x] avoid all doors
+- [x] increase happiness when playing
+- [x] increase all health
+- [x] increase regeneration rate
+- [x] set spawn point via item
+- [x] set avoid point for pets

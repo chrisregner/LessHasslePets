@@ -1,0 +1,36 @@
+<Item name="No Pets Sign" identifier="nopetsign" tags="nopetsign" category="Equipment"
+    Tags="smallitem" maxstacksize="32" maxstacksizecharacterinventory="8"
+    cargocontaineridentifier="metalcrate" description="" scale="0.5"
+    impactsoundtag="impact_metal_light" isshootable="true" GrabWhenSelected="true">
+    <Price baseprice="80" minleveldifficulty="1">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+        <Price storeidentifier="merchantclown" minavailable="0" maxavailable="2" />
+    </Price>
+    <PreferredContainer primary="engcab" />
+    <PreferredContainer
+        secondary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" amount="1"
+        spawnprobability="0.05" />
+    <Upgrade gameversion="0.9.5.0" scale="0.5" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="35">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="20">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="no-pet-sign-inventory.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <sprite texture="no-pet-sign.png" sourcerect="0,0,42,175" depth="0.5" premultiplyalpha="false" origin="0.5,0.5" />
+    <Body width="42" height="175" density="15" scale="0.5" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand"
+        msg="ItemMsgDetachWrench" MsgWhenDropped="ItemMsgPickupSelect" PickingTime="5.0"
+        aimpos="65,-10"
+        handle1="0,0" attachable="true" aimable="true" canbeselected="true">
+        <RequiredItem items="wrench,deattachtool" excludeditems="multitool" type="Equipped" />
+    </Holdable>
+</Item>

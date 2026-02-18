@@ -1,0 +1,27 @@
+{
+	"Lua.diagnostics.libraryFiles": "Enable",
+	"Lua.workspace.library": [
+		"C:/Users/chris/dev/Barotrauma-Lua-Annotations/Library/Client",
+		// "<Repository Path>/Library/Server",
+	],
+	"Lua.diagnostics.disable": [
+		"invisible",
+		"undefined-doc-name",
+		"undefined-global",
+		"undefined-field",
+		"need-check-nil",
+		"param-type-mismatch",
+		"return-type-mismatch",
+		"assign-type-mismatch",
+		"redundant-return-value",
+		"missing-parameter",
+		"missing-fields",
+		"missing-return",
+		"missing-return-value",
+		"cast-local-type",
+		"deprecated",
+		"inject-field",
+		"lowercase-global"
+	],
+	"Lua.diagnostics.workspaceDelay": 300000,
+}
