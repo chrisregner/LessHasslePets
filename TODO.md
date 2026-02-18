@@ -1,0 +1,5 @@
+- [ ] avoid all doors
+- [ ] increase happiness when playing
+- [ ] increase all health
+- [ ] increase regeneration rate
+- [ ] set spawn point via item

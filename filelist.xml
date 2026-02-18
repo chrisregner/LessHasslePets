@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Less Hassle Gardening" modversion="1.0.0.1" corepackage="False" gameversion="1.11.5.0">
+  <Item file="%ModDir%/sprinkler.xml" />
+  <Item file="%ModDir%/smallplanter.xml" />
+</contentpackage>
