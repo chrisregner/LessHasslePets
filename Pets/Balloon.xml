@@ -41,7 +41,7 @@
       <target Tag="nopetsign" State="Avoid" Priority="500" ReactDistance="100" AttackDistance="0"
         Timer="0" Threshold="0" />
       <petbehavior maxhappiness="100" unhappythreshold="20" happythreshold="80"
-        happinessdecreaserate="0.035" hungerincreaserate="0.03" playforce="25">
+        happinessdecreaserate="0.035" hungerincreaserate="0.03" playforce="100">
         <eat tag="petfood2" ignorecontained="true" requiredhunger="30-100" hunger="-50" happiness="5"
           priority="300" />
         <eat tag="dead" requiredhunger="70-100" hunger="-100" happiness="10" priority="1000" />
