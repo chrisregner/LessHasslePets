@@ -7,4 +7,7 @@
   <Item file="%ModDir%/Signs/PetSign.xml" />
   <Item file="%ModDir%/Signs/NoPetSign.xml" />
   <Item file="%ModDir%/PetFeeder/PetFeeder.xml" />
+  <Item file="%ModDir%/PetItems/MucusBall.xml" />
+  <Item file="%ModDir%/PetItems/Chitin.xml" />
+  <Item file="%ModDir%/PetItems/Poop.xml" />
 </contentpackage>

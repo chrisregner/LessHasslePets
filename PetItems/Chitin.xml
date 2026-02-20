@@ -1,0 +1,12 @@
+﻿<Override>
+  <Item identifier="chitin" Tags="smallitem" maxstacksize="8" hideinmenus="true" health="20" category="Misc" scale="0.5" impactsoundtag="impact_soft" impacttolerance="6" cargocontaineridentifier="metalcrate">
+    <Sprite texture="Content/Characters/Pets/pets.png" depth="0.2" sourcerect="330,265,52,44" origin="0.5,0.5" />
+    <Price baseprice="1" sold="false" canbespecial="false" />
+    <Deconstruct time="10">
+      <Item identifier="carbon" />
+    </Deconstruct>
+    <Body width="53" height="41" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <AiTarget sightrange="1000" static="true" />
+  </Item>
+</Override>

@@ -1,0 +1,25 @@
+﻿<Override>
+  <Item identifier="mucusball" Tags="smallitem" maxstacksize="8" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft" impacttolerance="6" cargocontaineridentifier="metalcrate">
+    <Sprite texture="Content/Characters/Pets/pets.png" depth="0.2" sourcerect="330,11,42,44" origin="0.5,0.5" />
+    <Price baseprice="1" sold="false" canbespecial="false" />
+    <Deconstruct time="10">
+      <Item identifier="antibleeding1" />
+      <Item identifier="paralyxis" />
+      <Item identifier="calcium" />
+    </Deconstruct>
+    <Body width="53" height="41" density="15" />
+    <Throwable characterusable="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true" />
+      <StatusEffect type="OnFire" target="This" Condition="0.0" setvalue="true" delay="0.5" />
+      <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+        <Explosion range="50.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" shockwave="false">
+          <!--effect here-->
+        </Explosion>
+        <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" colormultiplier="128,0,0,255" />
+        <Sound file="Content/Sounds/Damage/Gore3.ogg" range="500" />
+        <Remove />
+      </StatusEffect>
+    </Throwable>
+    <AiTarget sightrange="1000" static="true" />
+  </Item>
+</Override>
