@@ -4,3 +4,4 @@
 - [x] increase regeneration rate
 - [x] set spawn point via item
 - [x] set avoid point for pets
+- [x] pet food dispenser

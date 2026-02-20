@@ -1,0 +1,57 @@
+<Item name="Pet Feeder" identifier="petfeeder" tags="container,suppliescontainer" linkable="true"
+    pickdistance="150" waterproof="true" scale="0.5">
+    <!-- Visible & Tangible -->
+    <InventoryIcon texture="pet-food-dispenser-inventory.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Body width="101" height="202" density="15" />
+    <Sprite texture="pet-food-dispenser.png" depth="0.5" sourcerect="0,0,101,202" origin="0.5,0.5" />
+
+    <!-- Tradable -->
+    <Price baseprice="80" minleveldifficulty="1">
+      <Price storeidentifier="merchantoutpost" minavailable="1" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      <Price storeidentifier="merchantclown" minavailable="0" maxavailable="2" />
+    </Price>
+
+    <!-- Storable -->
+    <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.5" notcampaign="true" notpvp="true"/>
+    <PreferredContainer primary="wreckstoragecab,abandonedstoragecab,piratestoragecab,wreckcrewcab,abandonedcrewcab,piratecrewcab,outpostcrewcabinet" amount="1" spawnprobability="0.1" />
+
+    <!-- Fabricatable -->
+    <Fabricate suitablefabricators="fabricator" requiredtime="35">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+
+    <!-- Containable -->
+    <ItemContainer capacity="4" slotsperrow="2" canbeselected="true" hideitems="true">
+        <GuiFrame relativesize="0.16,0.22" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem" excludedidentifiers="mobilecontainer" />
+    </ItemContainer>
+
+    <!-- Holdable & Attachable -->
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" MsgWhenDropped="ItemMsgPickupSelect" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench,deattachtool" excludeditems="multitool" type="Equipped" />
+    </Holdable>
+    
+    <!-- Wirable -->
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <output name="quantity" displayname="connection.quantity" />
+    </ConnectionPanel>
+
+    <!-- Logic -->
+    <ItemComponent>
+      <StatusEffect type="always" target="This">
+        <Hook name="petfeeder" />
+      </StatusEffect>
+    </ItemComponent>
+</Item>
