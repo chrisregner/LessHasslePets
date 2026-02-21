@@ -1,6 +1,6 @@
 local descriptor = LuaUserData.RegisterType("BaroMod_sjx.ConditionStorage")
 
-function debugPrint(message)
+function pf_debugPrint(message)
     -- print('LHP Petfeeder: ' .. message)
 end
 
@@ -10,18 +10,18 @@ local function getContainedQuantity(containerComponent)
 
     -- Get all physical items recursively
     local allItems = containerComponent.Inventory.FindAllItems(nil, true)
-    debugPrint("Total physical items found in Inventory: " .. #allItems)
+    pf_debugPrint("Total physical items found in Inventory: " .. #allItems)
 
     for i, item in pairs(allItems) do
-        debugPrint(string.format("Iterating item [%d]: %s", i, tostring(item.Prefab.Identifier.Value)))
+        pf_debugPrint(string.format("Iterating item [%d]: %s", i, tostring(item.Prefab.Identifier.Value)))
 
         -- Standard Leaf Item Check:
         -- If it has no inventory, it's a "real" item (like a single fruit).
         if item.OwnInventory == nil then
             totalCount = totalCount + 1
-            debugPrint("  + Leaf item detected. New totalCount: " .. totalCount)
+            pf_debugPrint("  + Leaf item detected. New totalCount: " .. totalCount)
         else
-            debugPrint("  - Item has OwnInventory; skipping leaf increment.")
+            pf_debugPrint("  - Item has OwnInventory; skipping leaf increment.")
             
 
             -- StackBox Support:
@@ -36,9 +36,9 @@ local function getContainedQuantity(containerComponent)
                     end
                 end
 
-                debugPrint("  - Cache miss for ID " .. item.ID .. ". Value: " .. (storageCache[item.ID] ~= false and storageCache[item.ID].Name or "false"))
+                pf_debugPrint("  - Cache miss for ID " .. item.ID .. ". Value: " .. (storageCache[item.ID] ~= false and storageCache[item.ID].Name or "false"))
             else
-                debugPrint("  - Cache hit for ID " .. item.ID .. ". Value: " .. (storageCache[item.ID] ~= false and storageCache[item.ID].Name or "false"))
+                pf_debugPrint("  - Cache hit for ID " .. item.ID .. ". Value: " .. (storageCache[item.ID] ~= false and storageCache[item.ID].Name or "false"))
             end
 
             local cs = storageCache[item.ID]
@@ -50,14 +50,14 @@ local function getContainedQuantity(containerComponent)
                 
                 -- Add the virtual count (items that were 'consumed' into the stack)
                 totalCount = totalCount + currentItemCount
-                debugPrint(string.format("  + ConditionStorage detected. Adding virtual count: %d. New totalCount: %d", currentItemCount, totalCount))
+                pf_debugPrint(string.format("  + ConditionStorage detected. Adding virtual count: %d. New totalCount: %d", currentItemCount, totalCount))
             else
-                debugPrint("  - No ConditionStorage component found.")
+                pf_debugPrint("  - No ConditionStorage component found.")
             end
         end
     end
 
-    debugPrint("Final calculated totalCount: " .. totalCount)
+    pf_debugPrint("Final calculated totalCount: " .. totalCount)
     return totalCount
 end
 
@@ -70,7 +70,7 @@ Hook.Add('petfeeder', 'petfeeder', function(effect, deltaTime, petfeeder, target
     end
 
     local quantity = getContainedQuantity(container)
-    debugPrint('PetFeeder: Container has ' .. quantity .. ' items')
+    pf_debugPrint('PetFeeder: Container has ' .. quantity .. ' items')
 
     petfeeder.SendSignal(quantity, 'quantity')
 end)

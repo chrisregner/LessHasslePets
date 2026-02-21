@@ -38,7 +38,7 @@
         Timer="0" Threshold="0" />
       <target Tag="human" State="Follow" Priority="10" ReactDistance="200" AttackDistance="0"
         Timer="0" Threshold="0" />
-      <target Tag="nopetsign" State="Avoid" Priority="500" ReactDistance="100" AttackDistance="0"
+      <target Tag="nopetsign" State="Avoid" Priority="500" ReactDistance="200" AttackDistance="0"
         Timer="0" Threshold="0" />
       <petbehavior maxhappiness="100" unhappythreshold="20" happythreshold="80"
         happinessdecreaserate="0.035" hungerincreaserate="0.03" playforce="100">

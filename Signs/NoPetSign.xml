@@ -33,4 +33,5 @@
         handle1="0,0" attachable="true" aimable="true" canbeselected="true">
         <RequiredItem items="wrench,deattachtool" excludeditems="multitool" type="Equipped" />
     </Holdable>
+    <AiTarget sightrange="200" static="true" />
 </Item>
