@@ -1,5 +1,6 @@
 ﻿<Override>
   <Item name="" identifier="poop" nameidentifier="poop" Tags="smallitem" maxstacksize="8" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft" impacttolerance="6">
+    <PreferredContainer primary="crewcab"/>
     <Sprite texture="Content/Characters/Pets/pets.png" depth="0.7" sourcerect="387,15,53,41" origin="0.5,0.5" />
     <Deconstruct time="10">
       <Item identifier="carbon" />
